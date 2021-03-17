@@ -1,0 +1,29 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<VBox fx:controller="chat.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" >
+    <HBox fx:id="loginPanel">
+        <TextField fx:id="usernameField" HBox.hgrow="ALWAYS" promptText="Entre your nickname.." onAction="#login"/>
+        <Button  text="entry" onAction="#login"/>
+    </HBox>
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="msgArea" editable="false" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" wrapText="true"/>
+        <VBox>
+            <Button fx:id="loBtn" text="logout" minWidth="100" onAction="#logout" />
+            <ListView fx:id="clientsList" minWidth="100" />
+        </VBox>
+    </HBox>
+    <HBox fx:id="msgPanel" >
+        <TextField fx:id="msgField"  HBox.hgrow="ALWAYS" onAction="#sendMsg" />
+        <Button text="send" minWidth="100" onAction="#sendMsg"/>
+    </HBox>
+
+</VBox>
